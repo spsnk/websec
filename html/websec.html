@@ -1,0 +1,490 @@
+<!-- HTML5 y CSS -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Introducci&oacute;n a HTML5 y CSS</title>
+		<link rel="stylesheet" href="master.css" type="text/css" media="screen" />
+	</head>
+	<body>
+		<header>
+			<h1>El Blog de la Flor</h1>
+		</header>
+		<nav>
+			<ul>
+				<li class="selected"><a href="#">Blog</a></li>
+				<li><a href="#">Acerca</a></li>
+				<li><a href="#">Archivos</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="subscribe"><a href="#">Subscribir v&iactue;a. RSS</a></li>
+			</ul>
+		</nav>
+		<section id="intro">
+			<header>
+				<h2>Tienes tantas flores como nosostros?</h2>
+			</header>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+			<img src="intro_flower.png" alt="Flor" />
+		</section>
+		<div id="content">
+			<div id="mainContent">
+				<section>
+					<article class="blogPost">
+						<header>
+							<h2>Este es el t&iacute;tulo de un blog post</h2>
+							<p>Enviado el <time datetime="2016-06-29T23:31+01:00">June 29th 2016</time> by <a href="#">Alguien</a> - <a href="#comments">3 comments</a></p>
+						</header>
+						<div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet metus justo. Phasellus vitae tellus orci, at elementum ipsum. In in quam eget diam adipiscing condimentum. Maecenas gravida diam vitae nisi convallis vulputate quis sit amet nibh. Nullam ut velit tortor. Curabitur ut elit id nisl volutpat consectetur ac ac lorem. Quisque non elit et elit lacinia lobortis nec a velit. Sed ac nisl sed enim consequat porttitor.</p>
+							<img src="flower.png" alt="Flower" width="300" height="100"/>
+							<p>Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac erat. Pellentesque sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut pulvinar est. Sed ullamcorper nisi vel tortor volutpat eleifend. Vestibulum iaculis ullamcorper diam consectetur sagittis. Quisque vitae mauris ut elit semper condimentum varius nec nisl. Nulla tempus porttitor dolor ac eleifend. Proin vitae purus lectus, a hendrerit ipsum. Aliquam mattis lacinia risus in blandit.</p>
+							<p>Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante, non aliquam leo. Aliquam eleifend, est viverra semper luctus, metus purus commodo elit, a elementum nisi lectus vel magna. Praesent faucibus leo sit amet arcu vehicula sed facilisis eros aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum sapien accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum luctus nulla, eu malesuada urna consequat in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque massa lacus, sodales id facilisis ac, lobortis sed arcu. Donec hendrerit fringilla ligula, ac rutrum nulla bibendum id. Cras sapien ligula, tincidunt eget euismod nec, ultricies eu augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.</p>
+						</div>
+					</article>
+				</section>
+				<section id="canvases">
+				  <canvas id = "dibujarRectangulo" width = "300" height = "100"
+            style = "border: 1px solid black;">
+            Su navegador no soporta el elemento canvas.
+          </canvas>
+          <script>
+            var canvas = document.getElementById("dibujarRectangulo");
+            var contexto = canvas.getContext("2d");
+            contexto.fillStyle = "yellow";
+            contexto. fillRect( 5, 10, 200, 75 );
+            contexto.strokeStyle = "royalblue";
+            contexto.lineWidth = 6;
+            contexto.strokeRect( 4, 9, 201, 76);
+          </script>
+          
+          <canvas id = "dibujarLineas" width = "400" height = "200"
+          style = "border: 1px solid black;">
+          </canvas>
+          <script>
+            var canvas = document.getElementById("dibujarLineas");
+            var contexto = canvas.getContext("2d");
+            // lineas rojas sin una ruta cerrada
+            contexto.beginPath(); // comenzar una nueva ruta
+            contexto.moveTo(10, 10 ); // origen de la ruta
+            contexto.lineTo(390, 10);
+            contexto.lineTo(390, 30);
+            contexto.lineTo(10, 30);
+            contexto.lineWidth = 10; // anchura de la linea
+            contexto.lineJoin = "bevel" // estilo de unión de la linea
+            contexto.lineCap = "butt"; // estilo de terminación de la linea
+            contexto.strokeStyle = "red" // color de la linea
+            contexto.stroke(); // dibujar ruta
+            // líneas naranjas sin ruta cerrada
+            contexto.beginPath(); // comenzar una nueva ruta
+            contexto.moveTo(40, 75); // origen de la ruta
+            contexto.lineTo(40, 55);
+            contexto.lineTo(360, 55);
+            contexto.lineTo(360, 75);
+            contexto.lineWidth = 20; // ancho de la línea
+            contexto.lineJoin = "round" // estilo de unión de la línea
+            contexto.lineCap = "round"; // estilo de terminación de la linea
+            contexto.strokeStyle = "orange"; // color de la linea
+            contexto.stroke(); // dibujar ruta
+            // líneas verdes con una ruta cerrada
+            contexto.beginPath(); // comenzar una nueva ruta
+            contexto.moveTo(10, 100); // origen de la ruta
+            contexto.lineTo(390, 100);
+            contexto.lineTo(390, 130);
+            contexto.closePath(); // cerrar ruta
+            contexto.lineWidth = 10; // anchura de la linea
+            contexto.lineJoin = "miter"; // estilo de unión de la linea
+            contexto.strokeStyle = "green"; // color de la linea
+            contexto.stroke(); // dibujar ruta
+            // lineas azules sin una ruta cerrada
+            contexto.beginPath(); // comienza una nueva ruta
+            contexto.moveTo(40, 140); // origen de la ruta
+            contexto.lineTo(360, 190);
+            contexto.lineTo(360, 140);
+            contexto.lineTo(40, 190);
+            contexto.lineWidth = 5; // anchura de la linea
+            contexto.lineCap = "square"; // estilo de terminación de la línea
+            contexto.strokeStyle = "blue" // color de la linea
+            contexto.stroke(); // dibujar ruta
+          </script>
+          
+          <canvas id = "dibujarArcos" width = "315" height = "100">
+          </canvas>
+          <script>
+            var canvas = document.getElementById("dibujarArcos");
+            var contexto = canvas.getContext("2d");
+            // dibujar un circulo
+            contexto.beginPath();
+            contexto.arc(35, 50, 30, 0, Math.PI*2);
+            contexto.fillStyle = "mediumslateblue";
+            contexto.fill();
+            // dibujar un arco en sentido contrario a las manecillas del reloj
+            contexto.beginPath();
+            contexto.arc( 110, 50, 30, 0, Math.PI, false);
+            contexto.stroke();
+            // dibujar medio círculo en sentido de las manecillas del reloj
+            contexto.beginPath();
+            contexto.arc(185, 50, 30, 0, Math.PI, true);
+            contexto.fillStyle = "red";
+            contexto.fill();
+            // dibujar un arco en sentido contrario a las manecillas del reloj
+            contexto.beginPath();
+            contexto.arc(260, 50, 30, 0, 3*Math.PI/2);
+            contexto.strokeStyle = "darkorange";
+            contexto.stroke();
+          </script>
+          <canvas id = "sombra" width = "525" height = "250" style = "border: 1px solid black;">
+          </canvas>
+          <script>
+            // efecto de sombra con desplazamientos positivos
+            var canvas = document.getElementById("sombra");
+            var contexto = canvas.getContext("2d")
+            contexto.shadowBlur = 10;
+            contexto.shadowOffsetX = 15;
+            contexto.shadowOffsetY = 15;
+            contexto.shadowColor = "blue";
+            contexto.fillStyle = "cyan";
+            contexto.fillRect(25, 25, 200, 200);
+            // efecto de sombra con desplazamientos negativos
+            contexto.shadowBlur = 20;
+            contexto.shadowOffsetX = -20;
+            contexto.shadowOffsetY = -20;
+            contexto.shadowColor = "gray";
+            contexto.fillStyle = "magenta";
+            contexto.fillRect(300, 25, 200, 200);
+          </script>
+          <canvas id = "dibujarBezier" width = "150" height = "150"
+          style = "border: 1px solid black;">
+          </canvas>
+          <script>
+            var canvas = document.getElementById("dibujarBezier");
+            var contexto = canvas.getContext("2d");
+            contexto.beginPath();
+            contexto.moveTo(115, 20);
+            contexto.bezierCurveTo(12, 37, 176, 77, 32, 133);
+            contexto.lineWidth = 10;
+            contexto.strokeStyle = "red";
+            contexto.stroke();
+          </script>
+          <canvas id = "gradienteLineal" width = "200" height = "200"
+            style = "border: 2px solid navy;">
+            </canvas>
+            <script>
+            var canvas = document.getElementById("gradienteLineal");
+            var contexto = canvas.getContext("2d");
+            var gradiente = contexto.createLinearGradient(0, 0, 0, 200);
+            gradiente.addColorStop(0, "white");
+            gradiente.addColorStop(0.5, "lightsteelblue");
+            gradiente.addColorStop(1, "navy");
+            contexto.fillStyle = gradiente;
+            contexto.fillRect(0, 0, 200, 200);
+            </script>
+          <!-- gradiente lineal horizontal -->
+          <canvas id = "gradienteLineal2" width = "200" height = "200"
+          style = "border: 2px solid orange;">
+          </canvas>
+          <script>
+            var canvas = document.getElementById("gradienteLineal2");
+            var contexto = canvas.getContext("2d");
+            var gradiente = contexto.createLinearGradient(0, 0, 200, 0);
+            gradiente.addColorStop(0, "white");
+            gradiente.addColorStop(0.5, "yellow" );
+            gradiente.addColorStop(1, "orange");
+            contexto.fillStyle = gradiente;
+            contexto.fillRect(0, 0, 200, 200);
+            </script>
+            <!-- gradiente lineal diagonal -->
+            <canvas id = "gradienteLineal3" width = "200" height = "200"
+            style = "border: 2px solid purple;">
+            </canvas>
+            <script>
+            var canvas = document.getElementById("gradienteLineal3");
+            var contexto = canvas.getContext("2d");
+            var gradiente = contexto.createLinearGradient(0, 0, 135, 200);
+            gradiente.addColorStop(0, "white");
+            gradiente.addColorStop(0.5, "plum");
+            gradiente.addColorStop(1, "purple");
+            contexto.fillStyle = gradiente;
+            contexto.fillRect( 0, 0, 200, 200);
+          </script>
+          <canvas id = "gradienteRadial" width = "200" height = "200"
+          style = "border: 1px solid black;">
+          </canvas>
+          <script>
+            var canvas = document.getElementById("gradienteRadial");
+            var contexto = canvas.getContext("2d");
+            var gradiente = contexto.createRadialGradient(
+            100, 100, 10, 100, 100, 125);
+            gradiente.addColorStop(0, "white");
+            gradiente.addColorStop(0.5, "yellow");
+            gradiente.addColorStop(0.75, "orange");
+            gradiente.addColorStop(1, "red");
+            contexto.fillStyle = gradiente;
+            contexto.fillRect(0, 0, 200, 200);
+            </script>
+            <!-- gradiente radial con círculos no concéntricos -->
+            <canvas id = "gradienteRadial2" width = "200" height = "200"
+            style = "border: 1px solid black;">
+            </canvas>
+				</section>
+				<section id="ej3">
+				  <h1>Ejercicio 3</h1>
+				  <h2>3.1 Imagen con canvas</h2>
+          <script>
+            var canvas = document.getElementById("gradienteRadial2");
+            var contexto = canvas.getContext("2d");
+            var gradiente = contexto.createRadialGradient(
+            20, 150, 10, 100, 100, 125);
+            gradiente.addColorStop(0, "red");
+            gradiente.addColorStop(0.5, "orange");
+            gradiente.addColorStop(0.75, "yellow");
+            gradiente.addColorStop(1, "white");
+            contexto.fillStyle = gradiente;
+            contexto.fillRect(0, 0, 200, 200);
+          </script>
+          <script>
+            var imagen = new Image();
+            imagen.src = "hqdefault.jpg";
+            function dibujar(){
+            var canvas = document.getElementById("miimagen");
+            var contexto = canvas.getContext("2d");
+            contexto.drawImage(imagen, 0, 0, 480, 360);
+            } // fin de la función dibujar
+            window.addEventListener( "load", dibujar, false );
+          </script>
+          <canvas id = "miimagen" width = "480" height = "360"
+            style = "border: 1px solid Black;">
+          </canvas>
+				  <div style='display: none'>
+            <img id='img_mik' src='hqdefault.jpg' width='600' height='400' />
+          </div>
+				  <h2>3.2 Manipulacion de imagenes</h2>
+		      <script>
+            var contexto;
+            // contexto para dibujar sobre el lienzo
+            var rangoRojo;
+            // % del valor del pixel rojo original
+            var rangoVerde;
+            // % del valor del pixel verde original
+            var rangoAzul;
+            // % del valor del pixel azul original
+            var rangoAlfa;
+            // valor de cantidad alfa
+            var imagen = new Image(); // objeto imagen para almacenar la imagen cargada
+            var img_mik = document.getElementById('img_mik');
+            imagen.src = img_mik.src; // Establecer el origen de la imagen
+            function iniciar() {
+              var canvas = document.getElementById("ellienzo");
+              contexto = canvas.getContext("2d")
+              contexto.drawImage (imagen, 0, 0, 250, 200); // imagen original
+              contexto.drawImage(imagen, 250, 0,250,200);
+              //imagen para las modificaciones del usuario
+              procesarEscalaGrises(); // muestra la escala de grises de la imagen original
+              // configurar eventos de GUI
+              rangoRojo = document.getElementById( "rangoRojo" );
+              rangoRojo.addEventListener( "change",
+              function() { procesarImagen( this.value, rangoVerde.value,
+              rangoAzul.value ); }, false );
+              rangoVerde = document.getElementById( "rangoVerde" );
+              rangoVerde.addEventListener( "change",
+              function() { procesarImagen( rangoRojo.value, this.value,
+              rangoAzul.value ); }, false )
+              rangoAzul = document.getElementById( "rangoAzul" );
+              rangoAzul.addEventListener( "change",
+              function() { procesarImagen( rangoRojo.value,
+              rangoVerde.value, this.value ); }, false )
+              rangoAlfa = document.getElementById( "rangoAlfa" );
+              rangoAlfa.addEventListener( "change",
+              function() { procesarAlfa( this.value ); }, false )
+              document.getElementById( "botonReiniciar" ).addEventListener(
+              "click", reiniciarImagen, false );
+            } // fin de la función iniciar
+            // establece el valor alfa para todos los pixeles
+            function procesarAlfa( nuevoValor ){
+              // obtiene el objeto ImageData que representa el contenido del lienzo
+              var datosImagen = contexto.getImageData(0, 0, 250, 250 );
+              var pixeles = datosImagen.data; //información de pixeles de ImageData
+              // convierte cada pixel a escala de gris
+              for ( var i = 3; i < pixeles.length; i += 4 ){
+                pixeles [ i ] = nuevoValor;
+              } // fin de for
+              contexto.putImageData( datosImagen, 250, 0 ); // muestra escala de gris 
+            } // fin de la función procesarImagen
+            // establece los valores RGB para cada pixel
+            function procesarImagen( porcentajeRojo, porcentajeVerde, porcentajeAzul){
+              // obtener el objeto ImageData que representa el contenido del lienzo
+              contexto.drawImage(imagen, 250, 0,250,200);
+              var datosImagen = contexto.getImageData(0, 0 , 250, 250);
+              var pixeles = datosImagen.data; // información de pixeles de ImageData
+              // establecer porcentajes de rojo, verde y azul en cada pixel
+              for ( var i= 0; i < pixeles.length; i += 4 ){
+                pixeles[ i ] *= porcentajeRojo / 100;
+                pixeles[ i + 1 ] *= porcentajeVerde / 100;
+                pixeles[ i + 2 ] *= porcentajeAzul / 100;
+              } // fin de for
+              contexto.putImageData( datosImagen, 250, 0 ); // mostrar escala de gris
+            } // fin de la función procesarImagen
+            // crea versión en escala de grises de la imagen original
+            function procesarEscalaGrises(){
+              // obtiene el objeto ImageData que representa el contenido del lienzo
+              contexto.drawImage(imagen, 500, 0,250,200);
+              var datosImagen = contexto.getImageData(0, 0 , 250, 250);
+              var pixeles = datosImagen.data; // información de pixeles de ImageData
+              // convierte cada pixel en escala de gris
+              for ( var i = 0; i < pixeles.length; i += 4 ){
+                var promedio =
+                (pixeles[ i ] * 0.30 + pixeles [ i + 1 ] * 0.59 +
+                pixeles[ i + 2 ] * 0.11).toFixed(0);
+                pixeles[ i ] = promedio;
+                pixeles[ i + 1 ] = promedio;
+                pixeles[ i + 2 ] = promedio;
+              } // fin de for
+              contexto.putImageData( datosImagen, 500, 0 ); // mostrar escala de grises
+            } // fin de la función procesarEscalaGrises
+            // reinicia la imagen manipulada por el usuario y los controles deslizantes
+            function reiniciarImagen(){
+              contexto.drawImage(imagen, 250, 0,250,200);
+              rangoRojo.value = 100;
+              rangoVerde.value = 100;
+              rangoAzul.value = 100;
+              rangoAlfa.value = 255;
+            } // fin de la función reiniciarImagen
+            window.addEventListener( "load", iniciar, false );
+          </script>
+				  <canvas id = "ellienzo" width = "750" height = "200" ></canvas>
+          <p><label>Rojo:</label> 0 <input id = "rangoRojo"
+          type = "range" max = "500" value = "100"> 500%</p>
+          <p><label>Verde:</label> 0 <input id = "rangoVerde"
+          type = "range" max = "500" value = "100"> 500%</p>
+          <p><label>Azul:</label> 0 <input id = "rangoAzul"
+          type = "range" max = "500" value = "100"> 500%</p>
+          <p><label>Alfa:</label> 0 <input id = "rangoAlfa"
+          type = "range" max = "255" value = "255"> 255</p>
+          <p><input id = "botonReiniciar" type = "button"
+          value = "Reiniciar imagen">
+				  <h2>3.3 Patrones</h2>
+				  <script>
+            var imagen = new Image();
+            imagen.src = img_mik.src;
+            function iniciar(){
+              var canvas = document.getElementById("patron");
+              var contexto = canvas.getContext("2d");
+              var patron = contexto.createPattern(imagen, "repeat");
+              contexto.rect(5, 5, 600, 500);
+              contexto.fillStyle = patron;
+              contexto.fill();
+            } // fin de la función iniciar
+            window.addEventListener( "load", iniciar, false );
+          </script>
+          <canvas id = "patron" width = "600" height = "500"
+           style = "border: 1px solid black;">
+          </canvas>
+				</section>
+				<section id="comments">
+					<h3>Comments</h3>
+					<article>
+						<header>
+							<a href="#">Benito Ju&aacute;rez</a> on <time datetime="2016-06-29T23:35:20+01:00">June 29th 2016 at 23:35</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Francisco Villa</a> on <time datetime="2016-06-29T23:40:09+01:00">June 29th 2016 at 23:40</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Emiliano Zapata</a> on <time datetime="2016-06-29T23:59:00+01:00">June 29th 2016 at 23:59</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					</article>
+				</section>
+				<form action="#" method="post">
+					<h3>Enviar un comentario</h3>
+					<p>
+						<label for="name">Nombre</label>
+						<input name="name" id="name" type="text" required />
+					</p>
+					<p>
+						<label for="email">E-mail</label>
+						<input name="email" id="email" type="email" required />
+					</p>
+					<p>
+						<label for="website">Website</label>
+						<input name="website" id="website" type="url" />
+					</p>
+					<p>
+						<label for="comment">Comentario</label>
+						<textarea name="comment" id="comment" required></textarea>
+					</p>
+					<p><input type="submit" value="Post comment" /></p>
+				</form>
+			</div>
+			<aside>
+				<section>
+				<header>
+					<h3>Categor&iacute;as</h3>
+				</header>
+					<ul>
+						<li><a href="#">Lorem ipsum dolor</a></li>
+						<li><a href="#">Sit amet consectetur</a></li>
+						<li><a href="#">Adipisicing elit sed</a></li>
+						<li><a href="#">Do eiusmod tempor</a></li>
+						<li><a href="#">Incididunt ut labore</a></li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h3>Archives</h3>
+					</header>
+					<ul>
+						<li><a href="#">Diciembre 2015</a></li>
+						<li><a href="#">Enero 2016</a></li>
+						<li><a href="#">Febrero 2016</a></li>
+						<li><a href="#">Marzo 2016</a></li>
+						<li><a href="#">Abril 2016</a></li>
+						<li><a href="#">Mayo 2016</a></li>
+						<li><a href="#">Junio 2016</a></li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+		<footer>
+			<div>
+				<section id="about">
+					<header>
+						<h3>Acerca</h3>
+					</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <a href="#">laboris nisi ut aliquip</a> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</section>
+				<section id="blogroll">
+					<header>
+						<h3>Blogroll</h3>
+					</header>
+					<ul>
+						<li><a href="#">NETTUTS+</a></li>
+						<li><a href="#">FreelanceSwitch</a></li>
+						<li><a href="#">En los Bosques</a></li>
+						<li><a href="#">Netsetter</a></li>
+						<li><a href="#">PSDTUTS+</a></li>
+					</ul>
+				</section>
+				<section id="popular">
+					<header>
+						<h3>Popular</h3>
+					</header>
+					<ul>
+						<li><a href="#">Este es el t&iacute;tulo de un blog post</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+						<li><a href="#">Duis aute irure dolor</a></li>
+						<li><a href="#">Excepteur sint occaecat cupidatat</a></li>
+						<li><a href="#">Reprehenderit in voluptate velit</a></li>
+						<li><a href="#">Officia deserunt mollit anim id est laborum</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+					</ul>
+				</section>
+			</div>
+		</footer>
+	</body>
+</html>
